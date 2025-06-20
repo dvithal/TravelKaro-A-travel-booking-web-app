@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .input-group input, 
+        .input-group select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .submit-btn {
+            width: 100%;
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        async function validateForm() {
+            event.preventDefault();
+            var errors = [];
+
+            var name = document.getElementById("name").value.trim();
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                errors.push("Name must contain only alphabets.");
+            }
+
+            var email = document.getElementById("email").value.trim();
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                errors.push("Invalid email format.");
+            }
+
+            var phone = document.getElementById("phone").value.trim();
+            if (!/^\d{10}$/.test(phone)) {
+                errors.push("Phone number must be exactly 10 digits.");
+            }
+
+            var aadharNumber = document.getElementById("aadharNumber").value.trim();
+            if (!/^\d{12}$/.test(aadharNumber)) {
+                errors.push("Aadhar number must be exactly 12 digits.");
+            }
+
+            var studentId = document.getElementById("studentId").value.trim();
+            if (studentId === "") {
+                errors.push("Student ID cannot be empty.");
+            }
+
+            var password = document.getElementById("pass").value;
+            if (password.length < 8) {
+                errors.push("Password must be exactly 8 characters.");
+            }
+
+            var confirmPass = document.getElementById("cpass").value;
+            if (confirmPass !== password) {
+                errors.push("Passwords do not match.");
+            }
+
+            var errorDiv = document.getElementById("error-messages");
+            errorDiv.innerHTML = "";
+            if (errors.length > 0) {
+                errors.forEach(err => {
+                    var p = document.createElement("p");
+                    p.className = "error";
+                    p.textContent = err;
+                    errorDiv.appendChild(p);
+                });
+            } else {
+                const formData = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    aadharNumber: aadharNumber,
+                    studentId: studentId,
+                    university: document.getElementById("university").value,
+                    password: password
+                };
+
+                try {
+                    const response = await fetch("/signup", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const result = await response.json();
+                    if (response.status === 400) {
+                        var p = document.createElement("p");
+                        p.className = "error";
+                        p.textContent = result.message;
+                        errorDiv.appendChild(p);
+                    } else {
+                        localStorage.setItem("userEmail", email); 
+                        alert("Signup successful!");
+                        window.location.href = "/main.html"; 
+                    }
+                } catch (error) {
+                    console.error("Error submitting form:", error);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="POST" onsubmit="validateForm()">
+            <div class="input-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your 10-digit phone number" required>
+            </div>        
+            <div class="input-group">
+                <label for="aadharNumber">Aadhar Number:</label>
+                <input type="text" id="aadharNumber" name="aadharNumber" placeholder="Enter your Aadhar Number" required>
+            </div>            
+            <div class="input-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" placeholder="Enter your student ID" required>
+            </div>
+            <div class="input-group">
+                <label for="university">University:</label>
+                <select id="university" name="university" required>
+                    <option selected>VIT Vellore</option>
+                    <option>Indian Institute Of technology, Delhi</option>
+                    <option>Indian Institute Of technology, Mumbai</option>
+                    <option>Indian Institute Of technology, Madras</option>
+                    <option>Bits Pilani</option>
+                    <option>Delhi Technological University</option>
+                    <option>Manipal University</option>
+                    <option>Delhi University</option>
+                    <option>Jamia Mila Islamia Technical University, Delhi</option>
+                    <option>IIIT Delhi</option>
+                    <option>IIIT Hyderabad</option>
+                    <option>NIT Jaipur</option>
+                    <option>NIT Kurukshetra</option>
+                    <option>NIT Suratkal</option>
+                    <option>NIT Warangal</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" name="password" placeholder="Must be atleast 8 characters" required>
+            </div>
+            <div class="input-group">
+                <label for="cpass">Confirm Password:</label>
+                <input type="password" id="cpass" name="confirmPassword" placeholder="Re-enter password" required>
+            </div>
+            <div id="error-messages"></div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+            <p style="text-align: center; margin-top: 10px;">
+                <a href="login.html" style="text-decoration: none; color: #007bff;">Already registered? Login</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

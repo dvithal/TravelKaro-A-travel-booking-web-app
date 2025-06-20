@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search Results</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffffff, #b7bbbb);
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            margin: 20px 0;
+            font-size: 28px;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background: #f1f1f1;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .no-results {
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .loading {
+            font-size: 18px;
+            color: #007bff;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><span style="color: black;">Flight Search Results</span></h2> 
+        <div class="container">
+            <p id="loading" class="loading">Loading flights, please wait...</p>      
+            <table>
+                <thead>
+                    <tr>
+                        <th>Airline</th>
+                        <th>Flight Number</th>
+                        <th>Departure</th>
+                        <th>Destination</th>
+                        <th>Price</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody id="flightsTable">
+                    
+                </tbody>
+            </table>
+            <p id="noResults" class="no-results" style="display: none;">No flights found.</p>
+        </div>
+        <button onclick="window.location.href='/main.html'" style="margin-top: 20px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Back to Home</button>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                from: params.get("from") || "",
+                to: params.get("to") || "",
+                date: params.get("date") || ""
+            };
+        }
+
+        function fetchFlights() {
+            const { from, to, date } = getQueryParams();
+            if (!from || !to || !date) {
+                alert("Invalid search parameters!");
+                return;
+            }
+
+            const cleanFrom = from.split(" (")[0]; 
+            const cleanTo = to.split(" (")[0];
+
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("noResults").style.display = "none";
+            document.getElementById("flightsTable").innerHTML = "";
+
+            fetch(`/flights?from=${encodeURIComponent(cleanFrom)}&to=${encodeURIComponent(cleanTo)}&date=${date}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch flights.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Fetched flights:", data);
+                document.getElementById("loading").style.display = "none"; 
+                let table = document.getElementById("flightsTable");
+                let noResults = document.getElementById("noResults");
+                table.innerHTML = "";
+
+                if (!Array.isArray(data) || data.length === 0) {
+                    noResults.style.display = "block";
+                    return;
+                }
+                noResults.style.display = "none";
+
+                data.forEach(flight => {
+                    let flightId = flight._id || "";
+                    let airline = flight.airline || "Unknown Airline";
+                    let flightNumber = flight.flightNumber || "N/A";
+                    let departure = flight.departure || "Unknown";
+                    let destination = flight.destination || "Unknown";
+                    let price = flight.price || "0";
+
+                    let row = `<tr>
+                                <td>${airline}</td>
+                                <td>${flightNumber}</td>
+                                <td>${departure}</td>
+                                <td>${destination}</td>
+                                <td>₹${price}</td>
+                                <td><button onclick="confirmBooking('${flightId}', '${airline}', '${flightNumber}', '${departure}', '${destination}', '${price}')">Book Now</button></td>
+                            </tr>`;
+                    table.innerHTML += row;
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching flights:", error);
+                document.getElementById("loading").innerText = "Failed to load flights. Try again.";
+            });
+        }
+
+        function confirmBooking(flightId, airline, flightNumber, from, to, price) {
+            if (confirm(`Are you sure you want to book this flight?\n\nAirline: ${airline}\nFlight Number: ${flightNumber}\nFrom: ${from}\nTo: ${to}\nPrice: ₹${price}`)) {
+                bookFlight(flightId, airline, flightNumber, from, to, price);
+            }
+        }
+
+        function bookFlight(flightId, airline, flightNumber, from, to, price) {
+            if (!flightId) {
+                alert("Error: Flight ID is missing!");
+                return;
+            }
+
+            const userEmail = localStorage.getItem("userEmail"); 
+            if (!userEmail) {
+                alert("User not logged in!");
+                return;
+            }
+
+            console.log("Booking Flight ID:", flightId);
+            const { date } = getQueryParams();
+
+            const bookingData = {
+                flightId: flightId,
+                airline: airline,
+                flightNumber: flightNumber,
+                type: "Flight",
+                from: from,
+                to: to,
+                date: date,
+                price: price,
+                userEmail: userEmail
+            };
+
+            fetch("/book", { 
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(bookingData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Booking Response:", data);
+                if (data.message) {
+                    alert(data.message);
+                    if (data.message === "Flight booked successfully!") {
+                        window.location.href = "/yourTrips.html"; 
+                    }
+                }
+            })
+            .catch(error => {
+                console.error("Error booking:", error);
+                alert("Booking failed, please try again.");
+            });
+        }
+
+        fetchFlights();
+    </script>
+</body>
+</html>
