@@ -3,7 +3,7 @@
 **TravelKaro** is a web application designed to help students find and book the most affordable flights and cabs, with a capped flight fare of ₹7000.
 
  # Features
--  Flight and 🚕 Cab Booking
+-  Flight and Cab Booking
 -  Capped airfare (₹7000) based on student survey
 -  Smart suggestions for airports (AJAX-based)
 -  Dynamic flight search results without page reload
