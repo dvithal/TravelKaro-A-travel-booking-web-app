@@ -17,3 +17,6 @@
 
 # Screenshots
 <img width="1917" height="1021" alt="image" src="https://github.com/user-attachments/assets/feea96b5-3a15-4226-b89f-d413c97545c6" />
+<img width="1906" height="488" alt="image" src="https://github.com/user-attachments/assets/43535ae4-2204-4bd3-b04a-ae0fb3a29721" />
+<img width="1503" height="463" alt="image" src="https://github.com/user-attachments/assets/b036af1e-3b70-440a-8f18-2897ee9b2c79" />
+
