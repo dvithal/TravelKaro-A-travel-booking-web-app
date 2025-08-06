@@ -16,7 +16,7 @@
 - API Integration: Flight and Cab APIs (or mock data)
 
 # Screenshots
-<img width="937" height="502" alt="image" src="https://github.com/user-attachments/assets/376552bd-0923-40c3-a42e-f7bc572c871a" />
+<img width="937" height="700" alt="image" src="https://github.com/user-attachments/assets/376552bd-0923-40c3-a42e-f7bc572c871a" />
 <img width="905" height="500" alt="image" src="https://github.com/user-attachments/assets/6e91ad6d-2fa1-4b70-8487-993fc8f03f81" />
 <img width="1917" height="1021" alt="image" src="https://github.com/user-attachments/assets/feea96b5-3a15-4226-b89f-d413c97545c6" />
 <img width="1906" height="488" alt="image" src="https://github.com/user-attachments/assets/43535ae4-2204-4bd3-b04a-ae0fb3a29721" />
