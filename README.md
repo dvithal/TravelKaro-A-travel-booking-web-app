@@ -14,3 +14,6 @@
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - API Integration: Flight and Cab APIs (or mock data)
+
+# Screenshots
+<img width="1917" height="1021" alt="image" src="https://github.com/user-attachments/assets/feea96b5-3a15-4226-b89f-d413c97545c6" />
