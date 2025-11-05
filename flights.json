@@ -1,0 +1,403 @@
+[
+  {
+    "_id": "67ea822c53b49b6e57b71258",
+    "airline": "Air India",
+    "flightNumber": "AI-301",
+    "departure": "Delhi",
+    "destination": "Mumbai",
+    "departureTime": "2025-04-05T06:00:00.000+00:00",
+    "arrivalTime": "2025-04-05T08:10:00.000+00:00",
+    "price": 6200
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71259",
+    "airline": "Vistara",
+    "flightNumber": "UK-211",
+    "departure": "Bangalore",
+    "destination": "Hyderabad",
+    "departureTime": "2025-04-05T10:00:00.000+00:00",
+    "arrivalTime": "2025-04-05T11:40:00.000+00:00",
+    "price": 4000
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7125a",
+    "airline": "IndiGo",
+    "flightNumber": "6E-800",
+    "departure": "Pune",
+    "destination": "Delhi",
+    "departureTime": "2025-04-05T14:30:00.000+00:00",
+    "arrivalTime": "2025-04-05T16:40:00.000+00:00",
+    "price": 4950
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7125b",
+    "airline": "Go First",
+    "flightNumber": "G8-203",
+    "departure": "Chennai",
+    "destination": "Kolkata",
+    "departureTime": "2025-04-05T06:50:00.000+00:00",
+    "arrivalTime": "2025-04-05T09:25:00.000+00:00",
+    "price": 5300
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7125c",
+    "airline": "SpiceJet",
+    "flightNumber": "SG-411",
+    "departure": "Ahmedabad",
+    "destination": "Goa",
+    "departureTime": "2025-04-05T17:30:00.000+00:00",
+    "arrivalTime": "2025-04-05T19:25:00.000+00:00",
+    "price": 4800
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7125d",
+    "airline": "AirAsia",
+    "flightNumber": "I5-933",
+    "departure": "Goa",
+    "destination": "Mumbai",
+    "departureTime": "2025-04-05T09:15:00.000+00:00",
+    "arrivalTime": "2025-04-05T10:25:00.000+00:00",
+    "price": 4100
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7125e",
+    "airline": "Air India",
+    "flightNumber": "AI-411",
+    "departure": "Hyderabad",
+    "destination": "Pune",
+    "departureTime": "2025-04-05T20:00:00.000+00:00",
+    "arrivalTime": "2025-04-05T21:45:00.000+00:00",
+    "price": 3950
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7125f",
+    "airline": "Vistara",
+    "flightNumber": "UK-302",
+    "departure": "Chandigarh",
+    "destination": "Delhi",
+    "departureTime": "2025-04-05T07:40:00.000+00:00",
+    "arrivalTime": "2025-04-05T08:30:00.000+00:00",
+    "price": 3400
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71260",
+    "airline": "SpiceJet",
+    "flightNumber": "SG-100",
+    "departure": "Jaipur",
+    "destination": "Bangalore",
+    "departureTime": "2025-04-05T11:00:00.000+00:00",
+    "arrivalTime": "2025-04-05T13:15:00.000+00:00",
+    "price": 5500
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71261",
+    "airline": "IndiGo",
+    "flightNumber": "6E-060",
+    "departure": "Delhi",
+    "destination": "Chennai",
+    "departureTime": "2025-04-05T22:10:00.000+00:00",
+    "arrivalTime": "2025-04-06T00:50:00.000+00:00",
+    "price": 6000
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71262",
+    "airline": "Go First",
+    "flightNumber": "G8-401",
+    "departure": "Mumbai",
+    "destination": "Delhi",
+    "departureTime": "2025-04-05T19:20:00.000+00:00",
+    "arrivalTime": "2025-04-05T21:30:00.000+00:00",
+    "price": 5100
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71263",
+    "airline": "Air India",
+    "flightNumber": "AI-722",
+    "departure": "Kolkata",
+    "destination": "Hyderabad",
+    "departureTime": "2025-04-05T12:40:00.000+00:00",
+    "arrivalTime": "2025-04-05T15:00:00.000+00:00",
+    "price": 4200
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71264",
+    "airline": "IndiGo",
+    "flightNumber": "6E-444",
+    "departure": "Bangalore",
+    "destination": "Pune",
+    "departureTime": "2025-04-05T16:15:00.000+00:00",
+    "arrivalTime": "2025-04-05T18:00:00.000+00:00",
+    "price": 4800
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71265",
+    "airline": "Vistara",
+    "flightNumber": "UK-515",
+    "departure": "Delhi",
+    "destination": "Kolkata",
+    "departureTime": "2025-04-05T18:55:00.000+00:00",
+    "arrivalTime": "2025-04-05T21:25:00.000+00:00",
+    "price": 5700
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71266",
+    "airline": "SpiceJet",
+    "flightNumber": "SG-777",
+    "departure": "Hyderabad",
+    "destination": "Chennai",
+    "departureTime": "2025-04-05T08:05:00.000+00:00",
+    "arrivalTime": "2025-04-05T09:35:00.000+00:00",
+    "price": 3500
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71267",
+    "airline": "Go First",
+    "flightNumber": "G8-909",
+    "departure": "Pune",
+    "destination": "Ahmedabad",
+    "departureTime": "2025-04-05T13:10:00.000+00:00",
+    "arrivalTime": "2025-04-05T14:45:00.000+00:00",
+    "price": 4200
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71268",
+    "airline": "IndiGo",
+    "flightNumber": "6E-121",
+    "departure": "Mumbai",
+    "destination": "Kolkata",
+    "departureTime": "2025-04-05T05:40:00.000+00:00",
+    "arrivalTime": "2025-04-05T08:15:00.000+00:00",
+    "price": 6200
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71269",
+    "airline": "AirAsia",
+    "flightNumber": "I5-808",
+    "departure": "Delhi",
+    "destination": "Bangalore",
+    "departureTime": "2025-04-05T21:40:00.000+00:00",
+    "arrivalTime": "2025-04-06T00:05:00.000+00:00",
+    "price": 5500
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7126a",
+    "airline": "Vistara",
+    "flightNumber": "UK-133",
+    "departure": "Hyderabad",
+    "destination": "Goa",
+    "departureTime": "2025-04-05T15:40:00.000+00:00",
+    "arrivalTime": "2025-04-05T17:10:00.000+00:00",
+    "price": 4100
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7126b",
+    "airline": "Air India",
+    "flightNumber": "AI-555",
+    "departure": "Kolkata",
+    "destination": "Mumbai",
+    "departureTime": "2025-04-05T13:00:00.000+00:00",
+    "arrivalTime": "2025-04-05T16:15:00.000+00:00",
+    "price": 6300
+  },
+
+  {
+    "_id": "67ea822c53b49b6e57b7126c",
+    "airline": "Air India",
+    "flightNumber": "AI-560",
+    "departure": "Lucknow",
+    "destination": "Bangalore",
+    "departureTime": "2025-04-06T06:20:00.000+00:00",
+    "arrivalTime": "2025-04-06T08:30:00.000+00:00",
+    "price": 5050
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7126d",
+    "airline": "Vistara",
+    "flightNumber": "UK-135",
+    "departure": "Pune",
+    "destination": "Chennai",
+    "departureTime": "2025-04-06T11:05:00.000+00:00",
+    "arrivalTime": "2025-04-06T13:00:00.000+00:00",
+    "price": 4700
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7126e",
+    "airline": "IndiGo",
+    "flightNumber": "6E-728",
+    "departure": "Delhi",
+    "destination": "Goa",
+    "departureTime": "2025-04-06T15:30:00.000+00:00",
+    "arrivalTime": "2025-04-06T17:45:00.000+00:00",
+    "price": 6150
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7126f",
+    "airline": "Go First",
+    "flightNumber": "G8-321",
+    "departure": "Bangalore",
+    "destination": "Ahmedabad",
+    "departureTime": "2025-04-06T09:20:00.000+00:00",
+    "arrivalTime": "2025-04-06T11:45:00.000+00:00",
+    "price": 5100
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71270",
+    "airline": "SpiceJet",
+    "flightNumber": "SG-506",
+    "departure": "Hyderabad",
+    "destination": "Jaipur",
+    "departureTime": "2025-04-06T17:50:00.000+00:00",
+    "arrivalTime": "2025-04-06T20:00:00.000+00:00",
+    "price": 4850
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71271",
+    "airline": "AirAsia",
+    "flightNumber": "I5-600",
+    "departure": "Chennai",
+    "destination": "Bangalore",
+    "departureTime": "2025-04-06T21:10:00.000+00:00",
+    "arrivalTime": "2025-04-06T22:25:00.000+00:00",
+    "price": 3650
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71272",
+    "airline": "Air India",
+    "flightNumber": "AI-725",
+    "departure": "Delhi",
+    "destination": "Kolkata",
+    "departureTime": "2025-04-07T07:30:00.000+00:00",
+    "arrivalTime": "2025-04-07T10:10:00.000+00:00",
+    "price": 5800
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71273",
+    "airline": "Vistara",
+    "flightNumber": "UK-347",
+    "departure": "Ahmedabad",
+    "destination": "Hyderabad",
+    "departureTime": "2025-04-07T11:00:00.000+00:00",
+    "arrivalTime": "2025-04-07T13:20:00.000+00:00",
+    "price": 4500
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71274",
+    "airline": "IndiGo",
+    "flightNumber": "6E-634",
+    "departure": "Pune",
+    "destination": "Jaipur",
+    "departureTime": "2025-04-07T17:25:00.000+00:00",
+    "arrivalTime": "2025-04-07T19:35:00.000+00:00",
+    "price": 5000
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71275",
+    "airline": "Go First",
+    "flightNumber": "G8-522",
+    "departure": "Goa",
+    "destination": "Mumbai",
+    "departureTime": "2025-04-07T15:50:00.000+00:00",
+    "arrivalTime": "2025-04-07T17:00:00.000+00:00",
+    "price": 3600
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71276",
+    "airline": "SpiceJet",
+    "flightNumber": "SG-900",
+    "departure": "Bangalore",
+    "destination": "Delhi",
+    "departureTime": "2025-04-07T13:30:00.000+00:00",
+    "arrivalTime": "2025-04-07T16:10:00.000+00:00",
+    "price": 5200
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71277",
+    "airline": "AirAsia",
+    "flightNumber": "I5-425",
+    "departure": "Chennai",
+    "destination": "Ahmedabad",
+    "departureTime": "2025-04-07T06:15:00.000+00:00",
+    "arrivalTime": "2025-04-07T08:45:00.000+00:00",
+    "price": 4000
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71278",
+    "airline": "Air India",
+    "flightNumber": "AI-310",
+    "departure": "Kolkata",
+    "destination": "Bangalore",
+    "departureTime": "2025-04-07T11:30:00.000+00:00",
+    "arrivalTime": "2025-04-07T14:05:00.000+00:00",
+    "price": 5700
+  },
+  {
+    "_id": "67ea822c53b49b6e57b71279",
+    "airline": "Vistara",
+    "flightNumber": "UK-389",
+    "departure": "Delhi",
+    "destination": "Ahmedabad",
+    "departureTime": "2025-04-07T19:00:00.000+00:00",
+    "arrivalTime": "2025-04-07T21:20:00.000+00:00",
+    "price": 4600
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7127a",
+    "airline": "IndiGo",
+    "flightNumber": "6E-292",
+    "departure": "Mumbai",
+    "destination": "Lucknow",
+    "departureTime": "2025-04-07T09:20:00.000+00:00",
+    "arrivalTime": "2025-04-07T11:55:00.000+00:00",
+    "price": 5900
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7127b",
+    "airline": "Go First",
+    "flightNumber": "G8-780",
+    "departure": "Hyderabad",
+    "destination": "Kolkata",
+    "departureTime": "2025-04-07T18:10:00.000+00:00",
+    "arrivalTime": "2025-04-07T20:45:00.000+00:00",
+    "price": 4800
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7127c",
+    "airline": "SpiceJet",
+    "flightNumber": "SG-492",
+    "departure": "Chennai",
+    "destination": "Pune",
+    "departureTime": "2025-04-08T07:50:00.000+00:00",
+    "arrivalTime": "2025-04-08T09:25:00.000+00:00",
+    "price": 4400
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7127d",
+    "airline": "AirAsia",
+    "flightNumber": "I5-462",
+    "departure": "Ahmedabad",
+    "destination": "Delhi",
+    "departureTime": "2025-04-08T14:45:00.000+00:00",
+    "arrivalTime": "2025-04-08T17:10:00.000+00:00",
+    "price": 4700
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7127e",
+    "airline": "Air India",
+    "flightNumber": "AI-345",
+    "departure": "Bangalore",
+    "destination": "Jaipur",
+    "departureTime": "2025-04-08T15:25:00.000+00:00",
+    "arrivalTime": "2025-04-08T17:45:00.000+00:00",
+    "price": 5400
+  },
+  {
+    "_id": "67ea822c53b49b6e57b7127f",
+    "airline": "Vistara",
+    "flightNumber": "UK-492",
+    "departure": "Goa",
+    "destination": "Delhi",
+    "departureTime": "2025-04-08T20:10:00.000+00:00",
+    "arrivalTime": "2025-04-08T22:40:00.000+00",
+    "price": 6200
+  }
+]
